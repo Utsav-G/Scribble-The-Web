@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Scribble The Web",
+  "version": "1.0",
+  "description": "Scribble on webpages and save them as images",
+  "permissions": ["tabs","activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon16.png"
+  },
+  "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "run_at":"document_idle"
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
